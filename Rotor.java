@@ -14,6 +14,9 @@ public class Rotor {
     
     public boolean rotate(){
         //TODO
+        if (this.startChar == rotors[0].charAt[0]) {
+
+        }
                
     }
     
@@ -24,6 +27,11 @@ public class Rotor {
 
     public char charAt(int idx){
         //TODO
+        int index = 0;
+        while (index < idx) {
+            
+            index++;
+        }
     }
 }
     
