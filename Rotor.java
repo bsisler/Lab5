@@ -14,11 +14,12 @@ public class Rotor {
     
     public boolean rotate(){
         //TODO
-        String temp = rotorValues;
-        //rotorValues.charAt(26) = rotorValues.charAt(0);
-        
-        
-               
+        String temp = "";
+        temp = temp + rotorValues.charAt(26);
+        for (int i = 0; i < 25; i++) {
+            temp = temp + rotorValues.charAt(i);
+        }
+        return true;       
     }
     
 
