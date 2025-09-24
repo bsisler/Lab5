@@ -13,12 +13,15 @@ public class Rotor {
     }
     
     public boolean rotate(){
-        //TODO
+        //Create a place holder string
         String temp = "";
+        //Set the first char equal to the last char
         temp = temp + rotorValues.charAt(26);
+        //Iterate through the string and adds the chars into temp
         for (int i = 0; i < 25; i++) {
             temp = temp + rotorValues.charAt(i);
         }
+        rotorValues = temp;
         return true;       
     }
     
