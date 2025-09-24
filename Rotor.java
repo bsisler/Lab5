@@ -15,7 +15,7 @@ public class Rotor {
     public boolean rotate(){
         //TODO
         String temp = rotorValues;
-        rotorValues.charAt(26) = rotorValues.charAt(0);
+        //rotorValues.charAt(26) = rotorValues.charAt(0);
         
         
                
@@ -23,12 +23,12 @@ public class Rotor {
     
 
     public int indexOf(char c){
-        //TODO
+        //Return the index of a character in the rotorValues
         return rotorValues.indexOf(c);
     }
 
     public char charAt(int idx){
-        //TODO
+        //Return the character at an index in the rotorValues
         return rotorValues.charAt(idx);
     }
 }
