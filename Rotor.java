@@ -18,22 +18,40 @@ public class Rotor {
         //Set the first char equal to the last char
         temp = temp + rotorValues.charAt(26);
         //Iterate through the string and adds the chars into temp
-        for (int i = 0; i < 25; i++) {
+        for (int i = 0; i < 26; i++) {
             temp = temp + rotorValues.charAt(i);
         }
         rotorValues = temp;
-        return true;       
+        if (rotorValues.charAt(0) == startChar) {
+            return true;
+        } else {
+            return false;
+        }       
     }
     
 
     public int indexOf(char c){
-        //Return the index of a character in the rotorValues
-        return rotorValues.indexOf(c);
+        //Iterates through the string until you find the char
+        for (int i = 0; i < 27; i++) {
+            if (rotorValues.charAt(i) == c) {
+                return i;
+            }
+        }
+        //c is not in the string
+        return -1;
     }
 
     public char charAt(int idx){
         //Return the character at an index in the rotorValues
-        return rotorValues.charAt(idx);
+        int index = 0;
+        while (index < 27) {
+            if (index == idx) {
+                return rotorValues.charAt(index);
+            }
+            index++;
+        }
+        //idx is out of range
+        return '0';
     }
 }
     
