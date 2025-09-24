@@ -14,24 +14,22 @@ public class Rotor {
     
     public boolean rotate(){
         //TODO
-        if (this.startChar == rotors[0].charAt[0]) {
-
-        }
+        String temp = rotorValues;
+        rotorValues.charAt(26) = rotorValues.charAt(0);
+        
+        
                
     }
     
 
     public int indexOf(char c){
         //TODO
+        return rotorValues.indexOf(c);
     }
 
     public char charAt(int idx){
         //TODO
-        int index = 0;
-        while (index < idx) {
-            
-            index++;
-        }
+        return rotorValues.charAt(idx);
     }
 }
     
