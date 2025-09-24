@@ -22,6 +22,7 @@ public class Rotor {
             temp = temp + rotorValues.charAt(i);
         }
         rotorValues = temp;
+        //Check if the rotor has been rotated back to the start
         if (rotorValues.charAt(0) == startChar) {
             return true;
         } else {

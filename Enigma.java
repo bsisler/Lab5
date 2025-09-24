@@ -17,7 +17,13 @@ public class Enigma{
         rotors[2] = new Rotor(rotorInit[id3-1], start.charAt(2));
         
     }
-
+    
+    /*
+    * 1. Inner -> Outer at same position
+    * 2. Outer -> Middle at same letter
+    * 3. Middle -> Outer at same position
+    * (Opposite to decrypt)
+    */
 
     public String decrypt(String message){        
         //TODO
