@@ -28,11 +28,15 @@ public class Enigma{
     public String decrypt(String message){        
         String decrypted = "";
         for (int i = 0; i < message.length(); i++) {
+            //Step 1: Middle -> Outer (same position)
             char middle = message.charAt(i);
-            int position = rotors[1].indexOf(middle);
-            char outer = rotors[2].charAt(position);
-            position = rotors[0].indexOf(outer);
+            int position = rotors[2].indexOf(middle);
+            char outer = rotors[1].charAt(position);
+            //Step 2: Outer -> Middle (same letter)
+            position = rotors[2].indexOf(outer);
+            //Step 3: Inner -> Outer (same position)
             char inner = rotors[0].charAt(position);
+            //Add the newly decrypted letter then rotate the rotors
             decrypted = decrypted + inner;
             rotate();
         }
@@ -44,11 +48,15 @@ public class Enigma{
     public String encrypt(String message){
         String encrypted = "";
         for (int i = 0; i < message.length(); i++) {
+            //Step 1: Inner -> Outer (same position)
             char inner = message.charAt(i);
             int position = rotors[0].indexOf(inner);
             char outer = rotors[2].charAt(position);
+            //Step 2: Outer -> Middle (same letter)
             position = rotors[1].indexOf(outer);
+            //Step 3: Middle -> Outer (same position)
             char middle = rotors[2].charAt(position);
+            //Add the newly encrypted letter then rotate the rotors
             encrypted = encrypted + middle;
             rotate();
         }
