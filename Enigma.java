@@ -27,12 +27,19 @@ public class Enigma{
 
     public String decrypt(String message){        
         //TODO
+        String decrypted = "";
+        rotate();
+        return decrypted;
     }
 
 
     
     public String encrypt(String message){
         //TODO
+        String encrypted = "";
+        
+        rotate();
+        return encrypted;
     }
 
     
