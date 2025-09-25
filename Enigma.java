@@ -26,19 +26,32 @@ public class Enigma{
     */
 
     public String decrypt(String message){        
-        //TODO
         String decrypted = "";
-        rotate();
+        for (int i = 0; i < message.length(); i++) {
+            char middle = message.charAt(i);
+            int position = rotors[1].indexOf(middle);
+            char outer = rotors[2].charAt(position);
+            position = rotors[0].indexOf(outer);
+            char inner = rotors[0].charAt(position);
+            decrypted = decrypted + inner;
+            rotate();
+        }
         return decrypted;
     }
 
 
     
     public String encrypt(String message){
-        //TODO
         String encrypted = "";
-        
-        rotate();
+        for (int i = 0; i < message.length(); i++) {
+            char inner = message.charAt(i);
+            int position = rotors[0].indexOf(inner);
+            char outer = rotors[2].charAt(position);
+            position = rotors[1].indexOf(outer);
+            char middle = rotors[2].charAt(position);
+            encrypted = encrypted + middle;
+            rotate();
+        }
         return encrypted;
     }
 
